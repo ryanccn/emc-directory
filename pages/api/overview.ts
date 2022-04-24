@@ -3,7 +3,7 @@ import itemList from '~/lib/minecraft';
 import { getTable } from '~/lib/supabase';
 
 const h: NextApiHandler = async (_req, res) => {
-  const { data: listings } = await getTable().select('*');
+  const { data: listings } = await getTable().select('item');
 
   if (!listings) return res.status(404).send({ error: 'Not Found' });
 
