@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply tracking-tight antialiased;
+    @apply bg-white text-black dark:bg-zinc-900 dark:text-white;
+    @apply overflow-y-scroll scroll-smooth;
+  }
+
+  ::selection {
+    @apply bg-green-500 text-white;
+  }
+}
+
+@layer components {
+  #__next {
+    @apply mx-auto my-32 max-w-prose px-2;
+  }
+
+  .title {
+    @apply text-3xl font-bold;
+    @apply bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  input,
+  button,
+  a {
+    @apply focus:outline-none focus:ring-2;
+    @apply transition-shadow;
+  }
+}
