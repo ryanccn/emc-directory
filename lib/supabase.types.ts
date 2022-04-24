@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-  "/": {
+  '/': {
     get: {
       responses: {
         /** OK */
@@ -12,38 +12,38 @@ export interface paths {
       };
     };
   };
-  "/listings": {
+  '/listings': {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.listings.id"];
-          server?: parameters["rowFilter.listings.server"];
-          res?: parameters["rowFilter.listings.res"];
-          item?: parameters["rowFilter.listings.item"];
-          price?: parameters["rowFilter.listings.price"];
-          qty?: parameters["rowFilter.listings.qty"];
+          id?: parameters['rowFilter.listings.id'];
+          server?: parameters['rowFilter.listings.server'];
+          res?: parameters['rowFilter.listings.res'];
+          item?: parameters['rowFilter.listings.item'];
+          price?: parameters['rowFilter.listings.price'];
+          qty?: parameters['rowFilter.listings.qty'];
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
           /** Ordering */
-          order?: parameters["order"];
+          order?: parameters['order'];
           /** Limiting and Pagination */
-          offset?: parameters["offset"];
+          offset?: parameters['offset'];
           /** Limiting and Pagination */
-          limit?: parameters["limit"];
+          limit?: parameters['limit'];
         };
         header: {
           /** Limiting and Pagination */
-          Range?: parameters["range"];
+          Range?: parameters['range'];
           /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
+          'Range-Unit'?: parameters['rangeUnit'];
           /** Preference */
-          Prefer?: parameters["preferCount"];
+          Prefer?: parameters['preferCount'];
         };
       };
       responses: {
         /** OK */
         200: {
-          schema: definitions["listings"][];
+          schema: definitions['listings'][];
         };
         /** Partial Content */
         206: unknown;
@@ -53,15 +53,15 @@ export interface paths {
       parameters: {
         body: {
           /** listings */
-          listings?: definitions["listings"];
+          listings?: definitions['listings'];
         };
         query: {
           /** Filtering Columns */
-          select?: parameters["select"];
+          select?: parameters['select'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -72,16 +72,16 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.listings.id"];
-          server?: parameters["rowFilter.listings.server"];
-          res?: parameters["rowFilter.listings.res"];
-          item?: parameters["rowFilter.listings.item"];
-          price?: parameters["rowFilter.listings.price"];
-          qty?: parameters["rowFilter.listings.qty"];
+          id?: parameters['rowFilter.listings.id'];
+          server?: parameters['rowFilter.listings.server'];
+          res?: parameters['rowFilter.listings.res'];
+          item?: parameters['rowFilter.listings.item'];
+          price?: parameters['rowFilter.listings.price'];
+          qty?: parameters['rowFilter.listings.qty'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -92,20 +92,20 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.listings.id"];
-          server?: parameters["rowFilter.listings.server"];
-          res?: parameters["rowFilter.listings.res"];
-          item?: parameters["rowFilter.listings.item"];
-          price?: parameters["rowFilter.listings.price"];
-          qty?: parameters["rowFilter.listings.qty"];
+          id?: parameters['rowFilter.listings.id'];
+          server?: parameters['rowFilter.listings.server'];
+          res?: parameters['rowFilter.listings.res'];
+          item?: parameters['rowFilter.listings.item'];
+          price?: parameters['rowFilter.listings.price'];
+          qty?: parameters['rowFilter.listings.qty'];
         };
         body: {
           /** listings */
-          listings?: definitions["listings"];
+          listings?: definitions['listings'];
         };
         header: {
           /** Preference */
-          Prefer?: parameters["preferReturn"];
+          Prefer?: parameters['preferReturn'];
         };
       };
       responses: {
@@ -144,17 +144,17 @@ export interface parameters {
    * @description Preference
    * @enum {string}
    */
-  preferParams: "params=single-object";
+  preferParams: 'params=single-object';
   /**
    * @description Preference
    * @enum {string}
    */
-  preferReturn: "return=representation" | "return=minimal" | "return=none";
+  preferReturn: 'return=representation' | 'return=minimal' | 'return=none';
   /**
    * @description Preference
    * @enum {string}
    */
-  preferCount: "count=none";
+  preferCount: 'count=none';
   /** @description Filtering Columns */
   select: string;
   /** @description On Conflict */
@@ -173,19 +173,19 @@ export interface parameters {
   /** @description Limiting and Pagination */
   limit: string;
   /** @description listings */
-  "body.listings": definitions["listings"];
+  'body.listings': definitions['listings'];
   /** Format: uuid */
-  "rowFilter.listings.id": string;
+  'rowFilter.listings.id': string;
   /** Format: text */
-  "rowFilter.listings.server": string;
+  'rowFilter.listings.server': string;
   /** Format: bigint */
-  "rowFilter.listings.res": string;
+  'rowFilter.listings.res': string;
   /** Format: text */
-  "rowFilter.listings.item": string;
+  'rowFilter.listings.item': string;
   /** Format: bigint */
-  "rowFilter.listings.price": string;
+  'rowFilter.listings.price': string;
   /** Format: bigint */
-  "rowFilter.listings.qty": string;
+  'rowFilter.listings.qty': string;
 }
 
 export interface operations {}

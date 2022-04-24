@@ -1,5 +1,4 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import itemData from '~/lib/minecraft';
 import { getTable } from '~/lib/supabase';
 import type { definitions } from '~/lib/supabase.types';
 
@@ -61,14 +60,14 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 
   if (itemData.length === 0) return { notFound: true };
 
-  let { data: listings, error } = await getTable()
+  const { data: listings, error } = await getTable()
     .select('*')
     .eq('item', params.item);
 
   if (error) throw error;
   if (!listings) throw new Error('whoops');
 
-  listings = listings.sort((a, b) => a.price / a.qty - b.price / b.qty);
+  listings.sort((a, b) => a.price / a.qty - b.price / b.qty);
 
   return {
     props: {

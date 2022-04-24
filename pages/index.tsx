@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
 import ItemOverview from '~/components/ItemOverview';
