@@ -56,10 +56,10 @@ const ListingPage: NextPage<PageProps> = ({ itemData, listings }) => {
 export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
   if (!params || typeof params.item !== 'string') throw new Error('welp');
 
-  const itemData = await import('~/lib/minecraft')
-    .then((mod) => mod.default)
-    .then((data) => data.filter((k) => k.name === params.item))
-    .then((filtered) => filtered[0]);
+  const sourceData = await import('~/lib/minecraft').then((mod) => mod.default);
+  const itemData = sourceData.filter((k) => k.name === params.item);
+
+  if (itemData.length === 0) return { notFound: true };
 
   let { data: listings, error } = await getTable()
     .select('*')
@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 
   return {
     props: {
-      itemData,
+      itemData: itemData[0],
       listings,
     },
 
@@ -82,13 +82,14 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: itemData
-      .map((k) => k.name)
-      .map((n) => ({
-        params: { item: n },
-      })),
-
-    fallback: false,
+    paths: [
+      {
+        params: {
+          item: 'beacon',
+        },
+      },
+    ],
+    fallback: 'blocking',
   };
 };
 
