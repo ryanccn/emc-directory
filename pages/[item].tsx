@@ -75,6 +75,8 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
       itemData,
       listings,
     },
+
+    revalidate: 3600,
   };
 };
 
