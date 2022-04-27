@@ -1,11 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next';
+
 import itemList from '~/lib/minecraft';
 import { getTable } from '~/lib/supabase';
 import { useEffect, useState } from 'react';
 
 import ItemOverview from '~/components/ItemOverview';
 
-interface Overview {
+export interface Overview {
   label: string;
   css: string;
   name: string;
