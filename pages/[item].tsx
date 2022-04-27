@@ -81,13 +81,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [
-      {
-        params: {
-          item: 'beacon',
-        },
-      },
-    ],
+    paths: [],
     fallback: 'blocking',
   };
 };

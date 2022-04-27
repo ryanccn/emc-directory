@@ -10,7 +10,7 @@
   }
 
   ::selection {
-    @apply bg-green-500 text-white;
+    @apply bg-rose-400 text-white;
   }
 }
 
@@ -27,7 +27,7 @@
   input,
   button,
   a {
-    @apply focus:outline-none focus:ring-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-red-400;
     @apply transition-shadow;
   }
 
