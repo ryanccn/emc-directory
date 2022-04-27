@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-
-import { Overview } from '~/pages/index';
+import type { Overview } from '~/pages/index';
 
 const ItemOverview = ({ item }: { item: Overview }) => {
   return (
